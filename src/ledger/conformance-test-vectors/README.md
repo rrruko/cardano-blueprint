@@ -1,15 +1,14 @@
 vectors.tar.gz is a set of test vectors dumped from the cardano-ledger
 conway-era test suite that can be used to test alternative ledger
-implementations. Each vector consists of one transaction and a pair of "before"
-and "after" "NewEpochState" records. Vectors are grouped into directories based on the
-unit test that generated the vector, and numbered sequentially.
+implementations. Each vector consists of a sequence of transactions and a pair of "initial"
+and "final" "NewEpochState" records.
 
-Test vectors were obtained by running [this](https://github.com/SundaeSwap-finance/cardano-ledger-conformance-tests/commit/7635fa4924b3388e12434963f707d79cf03fb978) fork of cardano-ledger:
+Test vectors were obtained by running [this](https://github.com/SundaeSwap-finance/cardano-ledger-conformance-tests/commit/6aa9e5baa36329499383d17935d5394478411677) fork of cardano-ledger:
 
 ```
 git clone git@github.com:SundaeSwap-finance/cardano-ledger-conformance-tests.git
 cd cardano-ledger-conformance-tests
-git checkout 7635fa4924b3388e12434963f707d79cf03fb978
+git checkout 6aa9e5baa36329499383d17935d5394478411677
 cabal test cardano-ledger-conway
 tar czf vectors.tar.gz eras/conway/impl/dump/*
 ```
